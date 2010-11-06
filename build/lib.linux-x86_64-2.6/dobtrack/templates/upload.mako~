@@ -1,0 +1,19 @@
+<%inherit file="/base.mako" />
+
+<%def name="head_tags()">
+  <title>Uploaded file</title>
+</%def>
+
+<h1>Details of last uploaded item:</h1>
+<p>
+REP: ${c.item.rep}<br />
+Cutomer: ${c.item.customer}<br />
+Make: ${c.item.make}<br />
+Model: ${c.item.make}<br />
+Serial: ${c.item.serial}<br />
+Issue: ${c.item.issue}<br />
+
+</p>
+
+${c.rowsadded}
+

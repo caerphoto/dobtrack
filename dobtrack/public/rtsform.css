@@ -1,0 +1,108 @@
+@media print {
+    body {
+        margin: 0 0 0 15mm;
+        border: none;
+    }
+
+    #rtsform_controls {
+        display: none;
+    }
+}
+
+@media screen {
+    body {
+        margin: 25mm;
+        border: 1px dotted #CCC;
+    }
+
+    a {
+        display: inline;
+    }
+}
+
+body {
+  font-family: "Verdana", "Liberation Sans", "Arial", "Helvetica", sans-serif;
+  font-size: 13pt;
+  padding: 0;
+  background-color: #FFF;
+  color: #000;
+}
+
+#foliocontainer {
+    text-align: right;
+    margin-top: 3.5mm;
+}
+
+#folio {
+    border: 0.5mm solid #000;
+    padding: 3mm 15mm;
+}
+
+.detailsection,p,h2,h1,h3 {
+    clear: both;
+}
+
+.detailsection {
+    margin: 0;
+    padding: 0;
+    height: 3em;
+}
+
+#itemdesc {
+    font-size: 10pt;
+    vertical-align: middle;
+}
+
+.propertylabel, .itemproperty {
+    float: left;
+    margin: 0;
+    padding: 2mm;
+    font-family: "Consolas", "Lucida Console", "Liberation Mono", monospace;
+}
+
+.propertylabel {
+    width: 40mm;
+    text-align: right;
+    border: 0.5pt solid #FFF;
+}
+
+.itemproperty {
+    margin-left: 5mm;
+    border: 0.5pt solid #000;
+    width: 50mm;
+}
+
+#rep .propertylabel {
+    width: auto;
+}
+
+#itemdesc .propertylabel, #itemdesc .itemproperty {
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#itemdesc .itemproperty {
+    width: 100mm;
+    margin-left: 4mm;
+}
+
+h3#sigsection {
+    margin: 5mm 0;
+    text-align: left;
+    padding: 0;
+}
+
+#namebox, #signaturebox {
+    width: 98.75mm;
+    border: 0.5pt solid #000;
+    margin: 2mm 0;
+}
+
+#namebox {
+    height: 15mm;
+}
+
+#signaturebox {
+    height: 30mm;
+}

@@ -1,0 +1,7 @@
+<%inherit file="/base.mako" />
+
+<%def name="head_tags()">
+  <title>Item details</title>
+</%def>
+
+<h1>Item details for REP ${c.item.rep}</h1>

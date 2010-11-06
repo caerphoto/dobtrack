@@ -1,0 +1,32 @@
+<%inherit file="/base.mako" />
+
+<%def name="head_tags()">
+  <title>Index of REPs</title>
+</%def>
+
+<h1>Index of REPs</h1>
+
+<table border="1">
+<tr>
+    <th>REP</th>
+    <th>Customer</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Value</th>
+    <th>Issue</th>
+</tr>
+% for item in c.reps:
+    <tr>
+        <td>${item.rep}</td>
+        <td>${item.customer}</td>
+        <td>${item.make}</td>
+        <td>${item.model}</td>
+        <td>${item.value}</td>
+        <td>${item.issue}</td>
+    </tr>
+% endfor
+</table>
+
+<p>
+<a href="/dobitem/additem">Add a new item</a>.
+</p>

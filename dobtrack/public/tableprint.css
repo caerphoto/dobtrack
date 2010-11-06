@@ -1,0 +1,108 @@
+@media print {
+    body {
+        margin: 0;
+        border: none;
+        padding: 0;
+    }
+
+    a, input {
+        display: none;
+    }
+    th a {
+        display: inline;
+        text-decoration: underline;
+    }
+
+    #log, #logheader {
+        display: none;
+    }
+}
+
+@media screen {
+    body {
+        margin: 25mm;
+        border: 1px dotted #CCC;
+    }
+
+    a {
+        display: inline;
+    }
+
+    #log, #logheader {
+        display: block;
+    }
+}
+
+body, h1 {
+    font-family: 'Verdana', 'Liberation Sans', sans-serif;
+}
+
+h1 {
+    background-color: #FFF;
+    color: #000;
+    font-size: 16pt;
+    padding: 0;
+    margin: 0 0 12pt 0;
+}
+
+table, th, td {
+    font-family: 'Consolas', 'Liberation Mono', 'Lucida Console', monospace;
+    font-size: 8pt;
+    color: #000;
+    border-collapse: collapse;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tbody {
+    display: table-row-group;
+}
+
+table {
+    width: auto;
+    margin: 0;
+}
+
+th, td {
+    border: 0.5pt solid #AAA;
+    padding: 2pt;
+}
+
+.colhead a {
+    text-decoration: italic !important;
+}
+
+.i {
+    background-color: #FFF;
+}
+
+.h {
+    background-color: #DDD;
+}
+
+.loadingmessage {
+    background-color: #DDD;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#logheader {
+    margin-bottom: 0;
+}
+
+#log {
+    background-color: #FFF;
+    border: 1px solid #000;
+    height: 15em;
+    overflow: scroll;
+    font-size: 0.7em;
+    font-family: "Consolas", "Lucida Console", "Liberation Mono", monospace;
+}
+
+#log p {
+    border-bottom: 1px solid #DDD;
+    margin: 0;
+    padding: 0;
+}

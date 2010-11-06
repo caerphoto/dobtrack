@@ -1,0 +1,35 @@
+#Written by GNOME Terminal 2.30.2
+
+[GNOME Terminal Configuration]
+Version=1
+CompatVersion=1
+FactoryEnabled=true
+Windows=Window0;Window1;
+
+[Window0]
+MenubarVisible=true
+Role=gnome-terminal-window-27973-1699777512-1286702785
+ActiveTerminal=Terminal0xb3aef0
+Geometry=93x54+-842+78
+Terminals=Terminal0xb3aef0;
+
+[Terminal0xb3aef0]
+ProfileID=Default
+WorkingDirectory=/home/andy
+Zoom=1
+Width=93
+Height=54
+
+[Window1]
+MenubarVisible=true
+Role=gnome-terminal-window-27973-352760909-1286705019
+ActiveTerminal=Terminal0x9fd150
+Geometry=174x59+0+25
+Terminals=Terminal0x9fd150;
+
+[Terminal0x9fd150]
+ProfileID=Profile1
+WorkingDirectory=/home/andy/dobtrack/dobtrack
+Zoom=1
+Width=174
+Height=59

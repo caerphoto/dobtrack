@@ -1,0 +1,13 @@
+<%inherit file="/base.mako" />
+
+<%def name="head_tags()">
+  <title>Import data from CSV file</title>
+</%def>
+
+<h1>Import data from CSV filme</h1>
+
+<p>Choose a file to import:</p>
+${h.form(h.url(action='upload'), multipart=True)}
+File: ${h.file_field('myfile')} <br />
+${h.submit('Submit')}
+${h.end_form()}

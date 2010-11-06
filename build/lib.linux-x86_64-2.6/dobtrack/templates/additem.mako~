@@ -1,0 +1,38 @@
+<%inherit file="/base.mako" />
+
+<%def name="head_tags()">
+  <title>Add new DOB item</title>
+</%def>
+
+<h1>Add new DOB item</h1>
+
+<p>Item details:</p>
+
+<form name="add" method="POST" action="/dobitem/addtodb">
+REP number: <input type="text" name="rep" /><br />
+Initials: <input type="text" name="initials" /><br />
+Customer: <input type="text" name="customer" /><br />
+Value: <input type="text" name="value" /><br />
+Cost Centre: <input type="text" name="costcentre" /><br />
+Order #: <input type="text" name="order" /><br />
+<br />
+Make: <input type="text" name="make" /><br />
+Model: <input type="text" name="model" /><br />
+Part #: <input type="text" name="part" /><br />
+Serial #: <input type="text" name="serial" /><br />
+Asset Tag: <input type="text" name="asset" /><br />
+Warranty: <input type="text" name="warranty" /><br />
+<br />
+Location: <input type="text" name="location" /><br />
+GRN: <input type="text" name="grn" /><br />
+SAP: <input type="text" name="sap" /><br />
+<br />
+Issue: <input type="text" name="issue" /><br />
+State: <input type="text" name="state" /><br />
+Solution: <input type="text" name="solution" /><br />
+<br />
+RTS Date: <input type="text" name="rtsdate" /><br />
+Folio #: <input type="text" name="folio" /><br />
+
+<input type="submit" name="submit" value="Submit" />
+</form>

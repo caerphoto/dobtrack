@@ -1,0 +1,107 @@
+import logging
+
+from pylons import request, response, session, tmpl_context as c, url
+from pylons.controllers.util import abort, redirect
+
+from dobtrack.lib.base import BaseController, render, Session
+from dobtrack.model import Item
+
+from webhelpers.html import escape, HTML, literal, url_escape
+from webhelpers.html.tags import *
+
+
+log = logging.getLogger(__name__)
+
+class DobitemController(BaseController):
+
+    def __before__(self):
+        self.item_q = Session.query(Item)
+
+    def index(self):
+        # Return a list of all items in the db. Might not be a good idea once
+        # it gets quite full.
+        c.reps = [item for item in self.item_q.all()]
+        return render('/index.mako')
+        
+    def additem(self):
+        return render('/additem.mako')
+    
+    def addtodb(self):
+        newitem = Item(rep=int(request.params['rep']),
+                       initials=request.params['initials'],
+                       customer=request.params['customer'],
+                       value=int(request.params['value']),
+                       costcentre=request.params['costcentre'],
+                       order=request.params['order'],
+                       make=request.params['make'],
+                       model=request.params['model'],
+                       part=request.params['part'],
+                       serial=request.params['serial'],
+                       asset=request.params['asset'],
+                       warranty=request.params['warranty'],
+                       issue=request.params['issue'],
+                       state=request.params['state'],
+                       location=request.params['location'],
+                       solution=request.params['solution'],
+                       grn=request.params['grn'],
+                       sap=request.params['sap'],
+                       rtsdate=request.params['rtsdate'],
+                       folio=int(request.params['folio']))
+        Session.add(newitem)
+        Session.commit()
+        
+    def importcsv(self):
+        return render('/importcsv.mako')
+        
+    def upload(self):
+        """Really nasty CSV importer that does no error checking and expects
+        everything to be laid out in a particular manner.
+        """
+        import csv
+        csvfile = request.POST['csvfile']
+        
+        csvreader = csv.reader(csvfile.file, delimiter="\t", quotechar='"')
+        
+        rowsadded = 0
+        
+        for row in csvreader:
+            rep = row[0]
+            rep = rep[-6:]
+            
+            if rep == '':
+                rep = '0'
+            
+            newitem = Item(rep=int(rep),
+                           initials=u'AF',
+                           customer=row[1].encode('utf-8'),
+                           value=0,
+                           costcentre=row[3].encode('utf-8'),
+                           order=row[4].encode('utf-8'),
+                           make=row[5].encode('utf-8'),
+                           model=row[6].encode('utf-8'),
+                           part=row[7].encode('utf-8'),
+                           serial=row[8].encode('utf-8'),
+                           asset=row[9].encode('utf-8'),
+                           warranty=row[10].encode('utf-8'),
+                           issue=row[11],  #.encode('utf-8'),
+                           state=row[12],  #.encode('utf-8'),
+                           location=row[13].encode('utf-8'),
+                           solution=row[14].encode('utf-8'),
+                           grn=row[15].encode('utf-8'),
+                           sap=row[16].encode('utf-8'),
+                           rtsdate=row[17].encode('utf-8'),
+                           folio=0)
+            
+            Session.add(newitem)
+            rowsadded = rowsadded + 1
+            
+        Session.commit()
+            
+        c.item = newitem
+        c.rowsadded = rowsadded     
+        return render('/upload.mako')
+        
+    def showitem(self, id):
+        item = self.item_q.filter_by(rep=id).first()
+        c.item = item
+        return render('/showitem.mako')

@@ -1,0 +1,574 @@
+
+body {
+    background-color: #CCC;
+    color: #000;
+    font-family: 'Verdana', 'Liberation Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#margins {
+    padding: 1em;
+}
+
+h1 {
+    background-color: #FFF;
+    color: #444;
+    padding: 0.5em 0 0.5em 62px;
+    border: 1px solid #444;
+    background-image: url("/hd-icon.png");
+    background-repeat: no-repeat;
+    background-position: 8px center;
+}
+
+#userinfo {
+    font-size: 0.6em;
+    text-align: right;
+    margin: 0.5em 1em 0 0;
+    float: right;
+}
+
+#username {
+    font-weight: bold;
+}
+
+#divTableControls {
+    padding: 0.5em 1em;
+    border: 1px solid red;
+    border-width: 1px 1px 0 1px;
+    border-color: #555;
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    background-color: #FFF;
+}
+
+#divFilterOptions {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+#divFilterOptions label {
+    cursor: pointer;
+}
+
+#selFilterBy {
+    width: 10em;
+}
+
+#listfilter {
+    width: 20em;
+}
+
+#divCols {
+    display: block;
+    float: left;
+    background-color: #DDD;
+    color: #000;
+    border: 1px solid #444;
+    margin: 0.25em 1em 0 0;
+    padding: 1px 8px;
+    width: 11em;
+    cursor: pointer;
+    background-image: url('/downarrow_black.gif');
+    background-position: right;
+    background-repeat: no-repeat;
+    /*height: 1em;*/
+}
+
+#divCols:hover {
+    background-color: #FFF;
+}
+
+#ulCols {
+    border: 1px solid #444;
+    background-color: #DDD;
+    list-style: none;
+    width: 11em;
+    color: #000;
+    padding: 0 8px;
+    margin: 1px 0 0 -9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#ulCols li {
+    margin: 0;
+    padding: 0;
+}
+
+#ulCols label {
+    display: block;
+    text-indent: -25px;
+    padding: 0px 0 3px 25px;
+    cursor: pointer;
+}
+
+#ulCols label:hover {
+    background: #555;
+    color: #fff;
+}
+
+#ulCols input {
+    cursor: pointer;
+}
+
+table {
+    font-family: 'Consolas', 'Liberation Mono', 'Lucida Console', monospace;
+    font-size: 0.7em;
+    border-collapse: collapse;
+    color: #000;
+    clear: both;
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+    padding: 4px 2px;
+    border-width: 1px;
+    border-style: solid;
+    vertical-align: middle;
+}
+
+.oow {
+    background-color: #EBB;
+}
+
+.oowsoon {
+    background-color: #FEB;
+}
+
+#indextable th {
+    font-weight: normal;
+    color: #FFF;
+}
+
+#columnheaders th {
+    color: #FFF;
+    padding: 4px;
+    vertical-align: bottom;
+    background-color: #555;
+    border: 1px solid #444;
+    background-repeat: no-repeat;
+    background-position: right 40%;
+    cursor: pointer;
+}
+
+.sortasc, .sortdesc {
+    padding-right: 19px !important;
+}
+
+.sortasc {
+    background-image: url('/uparrow.gif');
+}
+
+.sortdesc {
+    background-image: url('/downarrow.gif');
+}
+
+.i {
+    background-color: #CCE0E9;
+}
+
+.h {
+    background-color: #CEEDBB;
+}
+
+#loadingmessage {
+    background-color: #DDD;
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: center;
+    background-image: url("/ajax-loader_grey.gif");
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+    padding: 1em 0 1em 32px;
+}
+
+tr.i, tr.h {
+    cursor: pointer;
+}
+
+#indextable tr.i th {
+    background-color: #386173;
+    border-color: #234959;
+}
+
+#indextable tr.h th {
+    background-color: #517627;
+    border-color: #30501D;
+}
+
+#indextable tr.i td {
+    border-color: #7D939D;
+}
+
+#indextable tr.h td {
+    border-color: #87AC71;
+}
+
+.deleting {
+    background-color: #800;
+    color: #AAA;
+    border-color: #AAA;
+}
+
+td.ivalue, td.ifolio, #indextable th {
+    text-align: right;
+}
+
+td.ivalue, td.ifolio {
+    padding-right: 1em;
+}
+
+td.ifujitsuowned, td.iinitials, td.ikind {
+    text-align: center;
+}
+
+tr.pendingupdate {
+    background-color: #FEA !important;
+    color: #999 !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* doesn't matter if links have been visited or not */
+a, a:visited {
+    color: #444;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FFF;
+}
+
+th a {
+    color: #FFF;
+    border-bottom: 1px dotted #FFF;
+    text-decoration: none;
+}
+
+th span {
+    font-weight: normal !important;
+    font-size: 1em;
+}
+
+#selSheet {
+    width: 5.5em;
+}
+
+#selItemsPerPage, #selPageList {
+    width: 5em;
+}
+
+#darkener {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    right: 0;
+    bottom: 0;
+    background-color: #CCC;
+    opacity: 0.6;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+#itemeditor {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 3% 0 3% !important;
+    width: 48em; /*90%;*/
+    border: 12px solid #6A787F;
+    padding: 0.25em;
+    color: #000;
+}
+
+#itemeditor a {
+    color: #386173;
+}
+
+#editorheading,#itemloadingmessage,#newitemheading {
+    width: auto;
+    margin: 0.2em 0 0.5em 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#itemdetails_leftcol, #itemdetails_rightcol {
+    margin: 0 1em 0 1em;
+    float: left;
+}
+
+#itemdetails_leftcol {
+    width: 21em;
+    text-align: right;
+}
+
+
+#itemdetails_rightcol {
+    width: 22em;
+}
+
+#itemdetails_leftcol input, select {
+    width: 16em;
+}
+
+#itemeditor label {
+    font-size: 0.8em;
+}
+
+#divFujitsuOwned {
+    text-align: right;
+}
+
+#divFujitsuOwned input {
+    width: auto;
+}
+
+.detailsection {
+    margin-bottom: 0.5em;
+    padding: 0.3em 0.5em 0 0.5em;
+    border: 1px dotted #7D939D;
+}
+
+#itemdetails_leftcol .detailsection {
+    margin-bottom: 1em;
+}
+
+.i .detailsection {
+    background-color: #DBE5E9;
+}
+
+.h .detailsection {
+    background-color: #DDEDD4;
+}
+
+.propbox {
+    margin-bottom: 0.2em;
+}
+
+.propbox#repinuse, .propbox#repok, .propbox#pendingrep {
+    border: 1px dotted #FFF;
+    color: #FFF;
+    text-align: center;
+    padding: 0.25em;
+    font-size: 0.7em;
+}
+
+.propbox#repinuse {
+    background-color: #F00;
+    font-weight: bold;
+    background-image: url('ajax-loader_white-on-red.gif');
+    background-position: 4px;
+    background-repeat: no-repeat;
+
+    display: none;
+}
+
+.propbox#repok {
+    background-color: #4F4;
+    font-weight: bold;
+    color: #000;
+    background-image: url('ajax-loader_black-on-green.gif');
+    background-position: 4px;
+    background-repeat: no-repeat;
+
+    display: none;
+}
+
+.propbox#pendingrep {
+    background-color: #66A;
+    background-image: url('ajax-loader_white-on-blue.gif');
+    background-position: -16px;
+    background-repeat: no-repeat;
+
+    display: none;
+}
+
+.propbox input, textarea.longinput {
+    border: 1px solid #CCC;
+    font-family: 'Consolas', 'Liberation Mono', 'Lucida Console', monospace;
+}
+
+#sapgrn input {
+    width: 8em;
+    margin: 0;
+    padding: 1px 0 1px 1px;
+}
+
+.invalidfield {
+    border-color: #F00 !important;
+}
+
+#tbx_sap {
+    border-right-width: 8px;
+}
+
+.rts_mandatory {
+    font-weight: bold;
+    color: #F00;
+}
+
+#textareas, #editorcontrols {
+    margin-bottom: 1em;
+}
+
+textarea.longinput {
+    display: block;
+    font-size: 0.8em;
+    vertical-align: top;
+    width: 25.5em;
+    height: 5em;
+    padding: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+#sec_state textarea {
+    height: 8em;
+}
+
+#editorcontrols {
+    clear: both;
+    margin: 0 1em 0.5em 1em;
+}
+
+#editorbuttons {
+    margin-left: 0.5em;
+    text-align: right;
+    float: right;
+}
+
+#editorbuttons input {
+    margin: 0 0 0 0.5em;
+}
+
+#deleteitem {
+    background-color: #F00;
+    color: #FFF;
+    font-weight: bold;
+    margin: 0 4em 0 0;
+}
+
+#debug1, #debug2, #debug3 {
+    background-color: #800;
+    color: #FFF !important;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border: 1px dotted white;
+
+    display: none;
+}
+
+.idatein {display: none;}
+.ikind {display: none;}
+.iinitials {display: none;}
+.icustomer {display: none;}
+.ifujitsuowned {display: none;}
+.ivalue {display: none; text-align: right;}
+.icostcentre {display: none;}
+.iordernum {display: none;}
+.imake {display: none;}
+.imodel {display: none;}
+.ipart {display: none;}
+.iserial {display: none;}
+.iasset {display: none;}
+.iwarranty {display: none;}
+.ilocation {display: none;}
+.iissue {display: none;}
+.istate {display: none;}
+.isolution {display: none;}
+.igrn {display: none;}
+.isap {display: none;}
+.irtsdate {display: none;}
+.ifolio {display: none;}
+.icomment {display: none;}
+
+#logheader {
+    margin-bottom: 0;
+    display: none;
+}
+
+#log {
+    background-color: #FFF;
+    border: 1px solid #000;
+    height: 15em;
+    overflow: scroll;
+    font-size: 0.7em;
+    font-family: "Consolas", "Lucida Console", "Liberation Mono", monospace;
+    display: none;
+}
+
+#log p {
+    border-bottom: 1px solid #DDD;
+    margin: 0;
+    padding: 0;
+}
+
+#authorinfo {
+    font-size: 0.6em;
+}
+
+@media print {
+    body {
+        margin: 0;
+        border: none;
+        background-color: #FFF;
+        color: #000;
+        font-size: 10pt;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    #lnkAddNewItem, #itemeditor, #divFilterOptions, #divTableControls, #log,
+    #logheader, #otheractions, #userinfo {
+        display: none;
+    }
+
+    h1 {
+        border: none !important;
+        background-color: #FFF;
+        color: #000;
+        font-size: 16pt;
+        padding: 0 !important;
+        margin: 0 0 12pt 0 !important;
+        background-image: none;
+    }
+
+    table, th, td {
+        font-size: 8pt;
+        color: #000;
+        border-collapse: collapse;
+    }
+
+    .colhead a {
+        text-decoration: italic !important;
+    }
+
+    .i {
+        background-color: #FFF;
+    }
+
+    .h {
+        background-color: #AAA;
+    }
+
+    .i th, .i td, .h th, .h td {
+        border: 0.5pt solid #000 !important;
+    }
+
+    .rts_mandatory {
+        display: none;
+    }
+}
